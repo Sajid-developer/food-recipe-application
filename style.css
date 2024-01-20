@@ -1,0 +1,283 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    transition: 0.3s all;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 100vw;
+    background:rgb(22, 24, 58);
+    padding:30px;
+}
+header h2{
+    width: 260px;
+    font-size: 30px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    word-spacing: 1px;
+    /* border: 2px solid red; */
+}
+h2 span.dot{
+    position: relative;
+    color: transparent;
+    background:linear-gradient(-30deg,rgb(203, 0, 0),rgb(255, 22, 22));
+    background-clip: text;
+    margin-left: 10px;
+}
+h2 span.dot::after{
+    content: '';
+    position: absolute;
+    left: 65px;
+    bottom: 0;
+    width: 10px;
+    height: 10px;
+    background:linear-gradient(-30deg,rgb(114, 0, 0),rgb(255, 22, 22));
+    border-radius: 50%;
+}
+#form{
+    display: flex;
+    /* margin-right: 100px; */
+    padding: 0 30px 0 0;
+    font-family: sans-serif;
+    overflow: hidden;
+}
+#form .searchBox, .searchBtn{
+    outline:none;
+    border: none;
+}
+#form .searchBox{
+    caret-color: red;
+    font-size: 16px;
+    border-radius: 6px;
+    padding: 8px 14px;
+}
+#form .searchBtn{
+    background:linear-gradient(-30deg,rgb(114, 0, 0),rgb(255, 22, 22));
+    font-size: 14px;
+    color: white;
+    letter-spacing: 0.6px;
+    border-radius: 6px;
+    margin-left: 7px;
+    padding: 8px 20px;
+    cursor: pointer;
+}
+.dish_container{
+    width: 100vw;
+    /* height: calc(100vh - 100px); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap ;
+    gap: 35px;
+    padding: 20px 0 60px 0;
+    background:rgb(37, 41, 105);
+    overflow: hidden;
+    transition: 0.4s ease;
+    /* border: 2px solid red; */
+}
+.dish_container .resultsFound{
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+.resultsFound h3{
+    width: 180px;
+    background-color: antiquewhite;
+    color: black;
+    font-size: 14px;
+    padding: 10px 12px 10px 22px;
+    border-radius: 0 10px 10px 0;
+}
+.dish_container .dishCard{
+    position: relative;
+    width: 315px;
+    padding:10px 5px 15px 5px;
+    background-color: rgb(211, 247, 249);
+    box-sizing: border-box;
+    border-radius: 14px;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 6px 4px 20px 10px rgba(0, 0, 0, 0.24);
+    transform: scale(0.92);
+    cursor: pointer;
+    transition:0.3s ease;
+    animation: scaleUp 0.8s ease-in-out;
+}
+.dish_container .dishCard:hover{
+    box-shadow: 6px 4px 30px 10px rgba(0, 0, 0, 0.4);
+    transform: scale(0.97);
+}
+@keyframes scaleUp{
+    0%{transform: scale(0);}
+    100%{transform: scale(0.94);}
+
+}
+.dishCard img{
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+.dishCard h3{
+    margin-top:15px;
+    padding: 0 12px;
+}
+.dishCard p{
+    margin:8px 0;
+}
+.dishCard a.youtube{
+    width: 60%;
+    display: block;
+    padding: 10px 12px;
+    margin:25px auto 10px auto;
+    border: none;
+    outline: none;
+    transform: scale(1);
+    text-decoration: none;
+    background:linear-gradient(-50deg,rgb(114, 0, 0),rgb(255, 22, 22));
+    color: white;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+.dishCard a.youtube:hover{
+    background:linear-gradient(50deg,rgb(114, 0, 0),rgb(255, 22, 22));
+    transform: scale(0.97);
+}
+a.youtube i{
+    margin:0;
+    padding: 0;
+    margin-right: 5px;
+    color: white;
+}
+
+.loading_Card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:500px;
+    height: 440px;
+    background-color: white;
+    margin-top: 50px;
+    border-radius: 20px;
+    padding: 30px 20px;
+    transition: 0.3s ease;
+}
+.loading_Card img{
+    width: 80%;
+    /* height:320px; */
+    object-fit: cover;
+    opacity: 0.6;
+    /* border: 2px solid gray; */
+}
+.loading_Card h2{
+    text-align: center;
+    margin-top: 50px;
+    color: transparent;
+    background:linear-gradient(-30deg,rgb(61, 61, 61),rgb(0, 0, 0));
+    background-clip: text;
+    opacity:0.7;
+    transform: scale(0.82);
+    animation:colorChange 0.8s ease infinite;
+    /* border: 2px solid gray; */
+}
+@keyframes colorChange{
+   0%{opacity:0.7;transform: scale(0.82);}
+   60%{opacity:1.0;transform: scale(0.9);}
+   100%{opacity:0.7;transform: scale(0.82);}
+}
+.recipe_Card{
+   position: fixed;
+   top:50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+   display: none;
+   flex-direction: column;
+   width: 700px;
+   height: 460px;
+   background:linear-gradient(40deg,rgba(162, 249, 249,0.82),rgba(255, 255, 255, 0.8)),url("Images/food1.jpg");
+   background-position: center;
+   background-size: 20%;
+   /* background-repeat: no-repeat; */
+   background-attachment: fixed;
+   overflow: auto;
+   padding: 30px 70px 40px  70px;
+   border-radius: 20px;
+   z-index: 1000;
+   box-shadow: 0 0 100px 160px rgba(0, 0, 0, 0.6);
+}
+.recipe_Card::-webkit-scrollbar{
+    display: none;
+}
+.recipe_Card h2{
+    background:linear-gradient(20deg,orangered 40%,maroon 60%);
+    font-size: 24px;
+    color: transparent;
+    text-align: center;
+    padding: 7px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid maroon;
+    border-top: 2px solid maroon;
+    background-clip: text;
+}
+.recipe_Card h3{
+    font-size: 20px;
+    margin: 20px 0;
+    text-decoration: underline;
+}
+.recipe_Card h3.instructions{
+    margin: 40px 0 15px 0;
+}
+.recipe_Card ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-left:20px;
+}
+.recipe_Card ul li{
+    width: 200px;
+    list-style: disc;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+.recipe_Card p{
+    font-size: 18px;
+    line-height: 30px;
+}
+
+@media (max-width: 450px){
+    header{
+        padding: 40px 20px;
+    }
+    form .searchBtn{
+        padding: 8px 12px;
+    }
+}
+@media (max-width: 690px){
+    form{
+        width: 100%;
+        padding: 0;
+        margin-top: 7px;
+    }
+    form .searchBox{
+        width: 80%;
+        padding: 15px 20px;
+    }
+}
