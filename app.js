@@ -57,7 +57,7 @@ dishContainer = document.querySelector('.dish_container');
           console.log(searchInput);
           dishContainer.innerHTML=`
           <div class="loading_Card">
-            <img src="Images/loading_image.jpg" alt="loading image">
+            <img src="Images/loading_image.webp" alt="loading image">
             <h2>Loading dishes...</h2>
           </div>`;
           dishContainer.style.height="auto";
