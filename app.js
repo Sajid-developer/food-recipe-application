@@ -4,7 +4,7 @@ dishContainer = document.querySelector('.dish_container');
 
     dishContainer.innerHTML=`
     <div class="loading_Card">
-    <img src="Images/loading_image.jpg" alt="loading image">
+    <img src="Images/loading_image.webp" alt="loading image">
     <h2>Loading dishes...</h2>
     </div>`;
     dishContainer.style.height="auto";
@@ -43,7 +43,7 @@ dishContainer = document.querySelector('.dish_container');
           catch(error){
             dishContainer.innerHTML=`
             <div class="loading_Card" style=" margin-top: 26px;">
-            <img src="Images/error.jpg" alt="loading image" style="width:90%;opacity: 0.8;">
+            <img src="Images/error.webp" alt="loading image" style="width:90%;opacity: 0.8;">
             <h2 style="margin-top: 10px;">Dish not found, search another dish !</h2>
             </div>`;
             searchBox.focus();
