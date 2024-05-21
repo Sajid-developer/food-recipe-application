@@ -1,1 +1,1 @@
-# food-recipe-app
+# food-recipe-application
