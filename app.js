@@ -1,6 +1,6 @@
-const searchBox = document.querySelector('header .searchBox');
-searchBtn = document.querySelector('header .searchBtn'),
-  dishContainer = document.querySelector('.dish_container');
+const searchBox = document.querySelector('header .searchBox'),
+      searchBtn = document.querySelector('header .searchBtn'),
+      dishContainer = document.querySelector('.dish_container');
 
 dishContainer.innerHTML = `
     <div class="loading_Card">
@@ -66,34 +66,6 @@ searchBtn.addEventListener("click", (e) => {
   }
 });
 
-const getRandDish = async (d) => {
-  let response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${d}`);
-  let data = await response.json();
-  console.log(data);
-  //  const{strMealThumb,strMeal}=data.meals[0];
-  //  dishContainer.innerHTML="";
-  let resultFound = data.meals.length;
-  dishContainer.innerHTML = `
-        <div class="resultsFound">
-          <h3>Results found : <span style="font-size:22px;margin-left:5px;">${resultFound}</span></h3>
-       </div>`
-  console.log(resultFound);
-  dishContainer.style.height = "auto";
-  dishContainer.style.background = "rgb(37, 41, 105)";
-
-  data.meals.forEach((dish) => {
-    dishContainer.innerHTML += `
-      <div class="dishCard">
-      <img src="${dish.strMealThumb}" alt="${dish.strMeal}">
-      <h3>${dish.strMeal}</h3>
-      <p>${dish.strArea} dish</p>
-      <p>Belongs to <strong>${dish.strCategory}</strong> category</p>
-      <a class="youtube" href="${dish.strYoutube}"><i class="fa-brands fa-youtube"></i> Watch on YouTube</a>
-      </div>`;
-
-  });
-
-};
 
 const Dishes = ['cheese', 'cake', 'chicken', 'fish', 'soup'];
 let randDish = Math.floor(Math.random() * Dishes.length);
@@ -102,5 +74,5 @@ let dishName = Dishes[randDish];
 console.log(dishName);
 
 setTimeout(() => {
-  getRandDish(dishName);
-}, 1500);
+  getDish(dishName);
+}, 1000);
