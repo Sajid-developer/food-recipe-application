@@ -1,4 +1,4 @@
-# Food Recipe App
+# 🍕 Food Recipe App
 
 A food recipe app where you can search for many kinds of recipes of foods and get to know how to cook some special dishes. It has been developed using HTML, CSS, JavaScript &amp; TheMealDb API.
 
